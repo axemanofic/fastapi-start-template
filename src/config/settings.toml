@@ -1,0 +1,4 @@
+[settings.app]
+title = "Awesome API"
+version = "0.1.0"
+description = "Awesome description"
