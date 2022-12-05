@@ -2,7 +2,7 @@
 name = "fastapi-start-template"
 version = "0.1.0"
 description = ""
-authors = ["axeman <axeman.ofic@gmail.com>"]
+authors = ["example <example@mail.com>"]
 readme = "README.md"
 packages = [{include = "src", from = ""}]
 
@@ -12,12 +12,12 @@ fastapi = "^0.79.0"
 uvicorn = {extras = ["standard"], version = "^0.18.2"}
 gunicorn = "^20.1.0"
 toml = "^0.10.2"
-pydantic = {extras = ["dotenv"], version = "^1.10.2"}
+pydantic = {extras = ["email"], version = "^1.10.2"}
 
 [tool.poetry.scripts]
 dev = "scripts.run:run_dev"
-prod = "scripts.run:run_production"
 gen_key = "scripts.generate_key:generate_key"
+startmodule = "scripts.startmodule:startmodule"
 
 [tool.poetry.group.dev.dependencies]
 requests = "^2.28.1"

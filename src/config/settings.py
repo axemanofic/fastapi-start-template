@@ -1,29 +1,7 @@
-from pydantic import BaseSettings, BaseModel, Field, Extra
+from pydantic import BaseSettings
 
+from .schemas import *
 from .utils import toml_config_settings_source
-
-
-class AppModel(BaseModel):
-    title: str = ''
-    version: str = ''
-    description: str = ''
-
-
-class SecretsModel(BaseModel):
-    allowed_host_env: str = Field('', alias='allowed_hosts')
-    cors_allow_origins_env: str = Field('', alias='cors_allow_origins')
-
-    DEBUG: int = Field(10, alias='debug', ge=0, le=1)
-    SECRET_KEY: str = Field('', alias='secret_key')
-
-    @property
-    def ALLOWED_HOSTS(self):
-        return self.allowed_host_env.split(',')
-
-    @property
-    def CORS_ALLOW_ORIGINS(self):
-        list_hosts = self.cors_allow_origins_env.split(',')
-        return [f'http://{address}' for address in list_hosts]
 
 
 class Settings(BaseSettings):

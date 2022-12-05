@@ -1,4 +1,19 @@
 [settings.app]
 title = "Awesome API"
 version = "0.1.0"
-description = "Awesome description"
+description = """
+## Awesome description
+This is just an example of a description.
+"""
+tags = [
+    {name = "Template", description = "This is just an example of a **description** tag."}, 
+]
+
+[settings.app.contact]
+name = "Some Name Developer"
+url = "http://x-force.example.com/contact/"
+email = "example@mail.com"
+
+[settings.app.license_info]
+name = "MIT License"
+url = "http://x-force.example.com/contact/"

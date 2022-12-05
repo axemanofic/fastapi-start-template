@@ -12,6 +12,9 @@ app = FastAPI(
     description=settings.app.description,
     version=settings.app.version,
     debug=settings.secrets.DEBUG,
+    contact=settings.app.contact,
+    license_info=settings.app.license_info,
+    openapi_tags=settings.app.tags,
 )
 
 app.add_middleware(
